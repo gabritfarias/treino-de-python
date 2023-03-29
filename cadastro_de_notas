@@ -1,0 +1,68 @@
+meuArquivo = open("alunos.txt" , "w")
+
+ 
+while True:  
+    incluir = int(input("DIGITE 1 PARA LEITURA" + '\n' "DIGITE 2 PARA INSERIR DADOS DE ALUNOS" + '\n' "DIGITE 3 PARA ENCERRAR" '\n' "DIGITE 4 PARA EDIÇÃO DO ARQUIVO EM MODO LEITURA " + '\n' "-->"))
+    try:
+        if  incluir == 1:
+            meuArquivo = open ("alunos.txt" , "r")
+            linhas = meuArquivo.readlines()
+            for linha in linhas:
+                print(linha)
+            meuArquivo.close()
+        elif incluir == 2:
+            meuArquivo = open("alunos.txt" , "a")
+            nome = input ("Digite o nome do aluno : ")
+            try:
+                if nome.isalpha() and len(nome) > 0 :
+                    meuArquivo.write(nome+'\n')
+                else:
+                    raise ValueError("Você digitou o camando errado")
+            except ValueError:
+                print("Você digitou algo diferente de letras ou deixou o espaço em branco")
+            matricula = input ("Digite a mtrícula do aluno: ")
+            try:
+                if matricula.isdigit() and len(matricula) > 0:
+                    meuArquivo.write(matricula+'\n')
+                else:
+                    raise ValueError("Você digitou o comando errado")
+            except ValueError:
+                print("A matrícula contém letras ou está vazia")
+                n1 = input ("Digite a priemeira nota: ")
+                try: 
+                    if n1.isdigit() and len(n1) > 0:
+                        meuArquivo.write(n1+'\n')
+                    else:
+                        raise ValueError("Você digitou algorrado")
+                except ValueError:
+                    print("A nota contém letras ou carectéries especias.")
+                n2 = input ("Digite a segunda nota: ")
+                try: 
+                    if n2.isdigit() and len(n2) > 0:
+                        meuArquivo.write(n2+'\n')
+                    else:
+                        raise ValueError("Você digitou algorrado")
+                except ValueError:
+                        print("A nota contém letras ou carectéries especias.")
+                n3 = input ("Digite a terceira nota:")
+                try: 
+                    if n3.isdigit() and len(n3) > 0:
+                        meuArquivo.write(n3+'\n')
+                    else:
+                        raise ValueError("Você digitou algorrado")
+                except ValueError:
+                        print("A nota contém letras ou carectéries especias.")
+        elif incluir == 4:
+                texto = str(input("Gostaria de editar algum dado: s \ n: "))
+                try:    
+                    if texto.isdigit() and len(texto) > 0:
+                        texto = input(" ")
+                    else:
+                        raise TypeError("ERROR")
+                except TypeError:
+                    print("Ainda não é possivel este arquivo :( ")    
+        else :
+            print("arquivo será encerrado.")
+    except FileNotFoundError:
+        print("Ainda não há dados gravados no arquivo")
+        break 
