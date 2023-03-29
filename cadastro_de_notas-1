@@ -1,0 +1,49 @@
+# treino-de-python
+Estarei compartilhando a minha experiência de python com vocês, no modo intermediário para cima 
+meuArquivo = open("arquivo.txt" , "w") 
+
+  
+
+  
+
+while True:   
+
+    incluir =str(input("Deseja incluir mais algum aluno: ")) 
+
+    if incluir == ("sim"): 
+
+        meuArquivo = open("arquivo.txt" , "a") 
+
+        nome = input ("Digite o nome do aluno : ") 
+
+        matricula = input ("Digite a mtrícula do aluno: ") 
+
+        n1 = input ("Digite a priemeira nota: ") 
+
+        n2 = input ("Digite a segunda nota: ") 
+
+        n3 = input ("Digite a terceira nota:") 
+
+        meuArquivo.write(nome+'\n') 
+
+        meuArquivo.write(matricula+'\n') 
+
+        meuArquivo.write(n1+'\n') 
+
+        meuArquivo.write(n2+'\n') 
+
+        meuArquivo.write(n3+'\n') 
+
+         
+
+    else : 
+
+        print("arquivo será encerrado.") 
+
+        break  
+
+  
+
+  
+
+meuArquivo.close() 
